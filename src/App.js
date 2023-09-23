@@ -1,11 +1,12 @@
-import logo from './logo.svg';
 import './App.css';
+import { FomrComponent } from './components/fomr';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <FomrComponent name='marco'/>
+        <FomrComponent name='Mau' />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
