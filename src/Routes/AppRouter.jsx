@@ -52,17 +52,14 @@ export const RouterApp = ()=>{
         <Routes>
             <Route index element={<Login />} />
 
-            <Route path="/home" element={
-                <ProtectedRoute user={user}>
-                    <Home />
-                </ProtectedRoute>
-            } />
-
+            <Route element={<ProtectedRoute user={user} />}>
+                <Route path="/home" element={<Home />} />
+                <Route path="/dashboard" element={<Dashboard />} />
+            </Route>
+            
             <Route path="/landing" element={<Landing />}/> 
 
             <Route path="/login" element={<Login />} />
-
-            <Route path="/dashboard" element={<Dashboard />} />
 
             <Route path="/analize" element={<Analize />} />
 
