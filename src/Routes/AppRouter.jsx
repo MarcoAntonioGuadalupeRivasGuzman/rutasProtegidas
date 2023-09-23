@@ -53,7 +53,7 @@ export const RouterApp = ()=>{
             <Route index element={<Login />} />
 
             <Route path="/home" element={
-                <ProtectedRoute>
+                <ProtectedRoute user={user}>
                     <Home />
                 </ProtectedRoute>
             } />
