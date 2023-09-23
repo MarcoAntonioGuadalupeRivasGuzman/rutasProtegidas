@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import { Login } from "../components/Login";
 import { Landing } from "../components/Landing";
@@ -8,6 +8,18 @@ import { Home } from "../components/Home";
 import '../../src/App.css';
 
 export const RouterApp = ()=>{
+
+    const [user, setUser] = useState(null);
+
+    const login=()=>{
+        setUser({
+            id: 1,
+            name: 'steve'
+        })
+    }
+
+    const logout=()=>setUser(null);
+
     return(
         <BrowserRouter>
         <nav>
@@ -33,6 +45,9 @@ export const RouterApp = ()=>{
                 </li>
             </ul>
         </nav>
+        {
+            user ? (<button onClick={logout}>Logout</button>): (<button onClick={login}>Login</button>)
+        }
         <Routes>
             <Route index element={<Login />} />
 
