@@ -6,6 +6,7 @@ import { Dashboard } from "../components/Dashboard";
 import { Analize } from "../components/Analize";
 import { Home } from "../components/Home";
 import '../../src/App.css';
+import { ProtectedRoute } from "../components/ProtectedRoute";
 
 export const RouterApp = ()=>{
 
@@ -51,7 +52,11 @@ export const RouterApp = ()=>{
         <Routes>
             <Route index element={<Login />} />
 
-            <Route path="/home" element={<Home />} />
+            <Route path="/home" element={
+                <ProtectedRoute>
+                    <Home />
+                </ProtectedRoute>
+            } />
 
             <Route path="/landing" element={<Landing />}/> 
 
